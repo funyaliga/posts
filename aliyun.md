@@ -4,7 +4,7 @@
 
 
 
-### FTP ###
+##FTP##
 
 参考链接:  https://help.aliyun.com/document_detail/51998.html
 
@@ -103,7 +103,7 @@ pasv_enable=YES
 
 
 
-### nginx ###
+##nginx##
 
 yum 和 源码包 安装的 区别 :  https://segmentfault.com/a/1190000007116797
 
@@ -195,7 +195,9 @@ server{
 
 
 
-###nodejs###
+
+
+##nodejs##
 
 ##### 安装nvm #####
 
@@ -215,13 +217,13 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 
 
 
-### LAMP ###
+##LAMP##
 
 https://lamp.sh/install.html
 
 
 
-### nginx  apache共存 ###
+##nginx  apache共存##
 
 1. 修改apache端口号
    打开 /usr/local/apache/conf/httpd.conf， 把`Listen 80` 改成其他端口号，比如`Listen 8080`
