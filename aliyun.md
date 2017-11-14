@@ -217,6 +217,73 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 
 
 
+## PM2 ##
+
+1. 安装
+
+   ```
+   npm install -g pm2
+   ```
+
+   ​
+
+2. 运行
+
+   ```
+   pm2 start app.js
+   ```
+
+   运行某个script
+
+   ```
+   pm2 start npm -- run {script_name}
+   ```
+
+   修改app name
+
+   ```
+   pm2 start npm --name "{app_name}" -- run {script_name}
+   ```
+
+   ​
+
+3. 常用命令
+
+   ```
+   // 查看进程状态 
+   pm2 list
+
+   // 重启
+   pm2 restart app.js
+
+   // 停止
+   pm2 stop app_name|app_id
+   // 停止所有
+   pm2 stop all
+
+   // 删除
+   pm2 delete app_name|app_id
+
+   // 监控资源运行状况
+   pm2 monit
+
+   // 查看某个详情状态
+   pm2 describe app_id
+
+   // 日志查看
+   pm2 logs
+
+   // 指令tab补全
+   pm2 completion install
+   source ~/.bash_profile
+
+   开机启动
+   ```
+
+   ​
+
+
+
 ## LAMP
 
 https://lamp.sh/install.html
@@ -247,3 +314,46 @@ https://lamp.sh/install.html
 
    ​
 
+## Git ##
+
+1. `wget https://github.com/git/git/archive/v2.3.0.zip`
+
+2. `unzip v2.3.0`
+
+3. 进入目录
+
+4. ```
+   make prefix=/usr/local/git all
+   sudo make prefix=/usr/local/git install
+   ```
+
+   如果失败了, 使用
+
+   ```
+   ./configure --without-iconv
+   make CFLAGS=-liconv prefix=/usr/local/git all
+   make CFLAGS=-liconv prefix=/usr/local/git install
+   ```
+
+5. `echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/bashrc`
+
+6. `source /etc/bashrc`
+
+7. `git —version`
+
+
+
+```
+git config --global user.name "用户名"
+git config --global user.email "邮箱"
+```
+
+
+
+创建ssh keys
+
+```
+ssh-keygen -t rsa -C "邮箱"
+```
+
+ssh -T git@github.com
