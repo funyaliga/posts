@@ -127,6 +127,8 @@ yum 和 源码包 安装的 区别 :  https://segmentfault.com/a/119000000711679
 
 `systemctl enable nginx.service`  // 开机启动
 
+`/etc/nginx` // 目录
+
 ##### 源码包 #####
 
 1.安装准备
@@ -194,6 +196,8 @@ server{
 ```
 
 
+
+include vhost/*.conf;
 
 
 
