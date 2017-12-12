@@ -442,7 +442,43 @@ ReactDOM.render(
 
 
 
-流程： `store.dispatch(action)`  -> 对应的`reducer`函数 -> 输出新的state树
+redux流程： 
+
+上：原始
+下：使用中间件middleware
+
+![avatar](https://raw.githubusercontent.com/funyaliga/posts/master/redux.png)
+
+
+
+中间件流程： 
+
+```js
+const test1 = store => next => action => {
+	console.log('before test1')
+	next(action)
+    console.log('next test1')
+}
+const test2 = store => next => action => {
+	console.log('before test2')
+	next(action)
+    console.log('next test2')
+}
+
+createStore(
+  reducer,
+  preloadedState,
+  applyMiddleware(
+    test1,
+    test2,
+  )
+)
+
+// before test1
+// before test2
+// next test2
+// next test1
+```
 
 
 
