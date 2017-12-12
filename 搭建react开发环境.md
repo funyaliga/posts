@@ -82,6 +82,21 @@ yarn add antd babel-plugin-import
 
 
 
+### 支持 async/await
+
+```
+npm install --save babel-polyfill
+```
+
+```javascript
+// app.js
+import 'babel-polyfill'
+```
+
+
+
+
+
 ### 运行 ###
 
 — src
@@ -395,4 +410,54 @@ const todoApp = combineReducers({
 
 export default todoApp
 ```
+
+```react
+// app.js
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import reducer from './reducers'
+import { createStore } from 'redux'
+const store = createStore(reducer)
+
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
+    ,
+    document.getElementById('app')
+)
+```
+
+
+
+#### Store
+
+- `getState() `  // 返回应用当前的 state 树
+- `dispatch(action) ` // 分发 action
+- `subscribe(listener)` // 添加一个变化监听器
+- `replaceReducer(nextReducer) `  // 替换 store 当前用来计算 state 的 reducer。
+
+
+
+流程： `store.dispatch(action)`  -> 对应的`reducer`函数 -> 输出新的state树
+
+
+
+
+
+middleware1
+​	|
+​	|     next()
+​	v
+middleware2
+​	|
+​	|   next()               |
+​	|			      |
+​	|   dispatch()  ___|
+​	v
+
+​	
 
