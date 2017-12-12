@@ -446,18 +446,5 @@ ReactDOM.render(
 
 
 
-
-
-middleware1
-​	|
-​	|     next()
-​	v
-middleware2
-​	|
-​	|   next()               |
-​	|			      |
-​	|   dispatch()  ___|
-​	v
-
-​	
+![avatar](https://raw.githubusercontent.com/funyaliga/posts/master/redux-middleware.png)
 
