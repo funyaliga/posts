@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,ChangeNotifierProvider
           children: <Widget>[
             Text('counter：${_model.counter}'), // 显示counter的值
             RaisedButton(
@@ -300,3 +300,8 @@ Selector<CounterModel, int>(
 dio 接口请求
 
 device_info 获取手机信息
+
+
+
+
+
