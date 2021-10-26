@@ -28,7 +28,7 @@
 
 否则this不存在，其值会被隐式转换为全局对象。
 
-<font color=red>*注：第5版的ECMAScript中（即严格模式use strict），已经不强迫转换成全局变量了，而是赋值为undefined。*</font>
+<font color=red>*注：第5版的ECMAScript中（即严格模式use strict），已经不强迫转换成全局变量了，而是赋值为undefined，可使用`.bind(this)`指向window。*</font>
 
 ```javascript
 function fn() {
@@ -138,7 +138,7 @@ obj.fn()(); // obj
 
    ```javascript
    setTimeout(function () {
-     console.log(this)
+     console.log(this) // Window
    }, 100);
    ```
 
