@@ -1,3 +1,9 @@
+一些名词概念：
+
+- `MemberExpression`：成员表达式节点，简单理解就是括号()左边的部分。比如foo()是foo, foo.bar()是foo.bar
+
+
+
 
 
 ##### this指向优先级
