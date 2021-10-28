@@ -1,10 +1,13 @@
 一些名词概念：
 
 - `MemberExpression`：成员表达式节点，简单理解就是括号()左边的部分。比如foo()是foo, foo.bar()是foo.bar
+- `Reference type`：引用类型，
 
 
 
+简图
 
+![this指向](/Users/junli/work/fun/posts/img/this指向.png)
 
 ##### this指向优先级
 
